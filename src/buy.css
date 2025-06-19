@@ -1,0 +1,663 @@
+.car-card-container {
+width: 889px;
+height: 296px;
+position: relative;
+}
+
+.car-card-bg {
+width: 889px;
+height: 296px;
+position: absolute;
+left: 0;
+top: 0;
+background: #f5f5f5;
+border-radius: 16px;
+}
+
+.car-card-img {
+width: 375px;
+height: 294px;
+position: absolute;
+left: 514px;
+top: 0;
+border-radius: 16px;
+}
+
+.car-card-title-container {
+padding: 10px;
+position: absolute;
+left: 267px;
+top: 40px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.car-card-title {
+text-align: right;
+color: black;
+font-size: 24px;
+font-family: Tajawal;
+font-weight: 700;
+display: flex;
+flex-direction: column;
+justify-content: center;
+word-wrap: break-word;
+}
+
+.car-card-feature {
+padding: 10px;
+position: absolute;
+background: white;
+border-radius: 16px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.car-card-feature-text {
+text-align: right;
+color: black;
+font-size: 20px;
+font-family: Tajawal;
+font-weight: 500;
+word-wrap: break-word;
+}
+
+.car-card-feature-icon {
+width: 24px;
+height: 24px;
+position: relative;
+overflow: hidden;
+}
+
+.car-card-price-container {
+padding: 10px;
+position: absolute;
+left: 26px;
+top: 219px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.car-card-price {
+text-align: right;
+color: #162087;
+font-size: 32px;
+font-family: 'DM Sans';
+font-weight: 700;
+line-height: 30px;
+word-wrap: break-word;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.car-card-origin {
+padding: 10px;
+position: absolute;
+left: 297px;
+top: 185px;
+background: white;
+border-radius: 16px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+.color-picker-container {
+width: 364px;
+height: 296px;
+top: -297px;
+margin-right: 930px;
+position: relative;
+}
+
+.color-picker-bg {
+width: 364px;
+height: 296px;
+position: absolute;
+left: 0;
+top: 0;
+background: #f5f5f5;
+border-radius: 16px;
+}
+
+.color-picker-title-container {
+padding: 10px;
+position: absolute;
+left: 222px;
+top: 29px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.color-picker-title {
+text-align: right;
+color: black;
+font-size: 24px;
+font-family: Tajawal;
+font-weight: 700;
+word-wrap: break-word;
+}
+
+.color-picker-subtitle-container {
+padding: 10px;
+position: absolute;
+left: 217px;
+top: 78px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.color-picker-subtitle {
+text-align: right;
+color: black;
+font-size: 16px;
+font-family: Tajawal;
+font-weight: 500;
+word-wrap: break-word;
+}
+
+.color-option {
+width: 44px;
+height: 44px;
+position: absolute;
+border-radius: 9999px;
+}
+
+.color-white {
+background: white;
+left: 272px;
+top: 148px;
+}
+
+.color-black {
+background: black;
+left: 216px;
+top: 148px;
+}
+
+.color-gray {
+background: #999999;
+left: 160px;
+top: 148px;
+}
+
+.color-red {
+background: #C90000;
+left: 104px;
+top: 148px;
+
+}
+
+.color-brown {
+background: #906613;
+left: 48px;
+top: 148px;
+}
+.feature-icon-1 {
+width: 21.51px;
+height: 23.99px;
+position: absolute;
+left: 1.24px;
+top: 0.01px;
+background: #162087;
+}
+
+.feature-icon-2a {
+width: 20.11px;
+height: 21px;
+position: absolute;
+left: 2.39px;
+top: 1.5px;
+background: #162087;
+}
+
+.feature-icon-2b {
+width: 15.15px;
+height: 15.67px;
+position: absolute;
+left: 1.5px;
+top: 5.33px;
+background: #162087;
+}
+
+.feature-icon-3a {
+width: 3.03px;
+height: 5.08px;
+position: absolute;
+left: 7.46px;
+top: 14.71px;
+background: #162087;
+}
+
+.feature-icon-3b {
+width: 24px;
+height: 24px;
+position: absolute;
+left: 0;
+top: 0;
+background: #162087;
+}
+
+.feature-icon-4 {
+width: 22px;
+height: 16px;
+position: absolute;
+left: 1px;
+top: 4px;
+background: #162087;
+}
+.color-option {
+width: 44px;
+height: 44px;
+position: absolute;
+border-radius: 9999px;
+cursor: pointer;
+transition: transform 0.3s ease, outline 0.3s ease;
+}
+
+.color-option.selected {
+outline: 4px solid #162087;
+transform: scale(1.2);
+z-index: 10;
+}
+.email-box {
+width: 500px; /* اضبط العرض حسب ما يناسب */
+margin: -290px 0 20px;
+position: relative;
+
+  font-family: 'Tajawal', sans-serif;
+ right: 100px;
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.email-label {
+display: block;
+right: 100px;
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.email-input {
+width: 100;
+  height: 64px;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 16px;
+  border: 1px solid black;
+  outline: none;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.email-input::placeholder {
+color: #999999;
+}
+.phone-input-container {
+  width: 526px;
+  margin: -120px auto 20px;
+  position: relative;
+  right: 300px;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.phone-label {
+  display: block;
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.phone-input-box {
+  width: 100%;
+  height: 64px;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 16px;
+  border: 1px solid black;
+  outline: none;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.phone-error {
+  color: red;
+  margin-top: 8px;
+  font-weight: 600;
+  text-align: right;
+  font-size: 14px;
+}
+.card-upload-container {
+  width: 526px;
+  height: 106px;
+  position: relative;
+}
+
+.card-upload-label {
+  padding: 10px;
+  position: absolute;
+  left: 202px;
+  top: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.label-text {
+  position: relative;
+  right: 60px; /* تحرك 200px لليمين */
+  color: black;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+
+.upload-box {
+  width: 500px;
+  height: 64px;
+  margin: -0px 0 20px;
+  position: absolute;
+  right: 100px;
+  top: 42px;
+  background: white;
+  border-radius: 16px;
+  outline: 0.7px solid black;
+  margin-bottom: 30px;
+}
+
+.upload-text-container {
+  padding: 10px;
+  position: absolute;
+  left: 0px;
+  top: 52px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-text {
+  text-align: left;
+  color: #999999;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.back-id-upload-section {
+  width: 533px;
+  right: 710px;
+  top: -145px;
+  height: 108px;
+  margin-top: 40px; /* للتباعد من اللي فوق */
+  position: relative;
+}
+
+.back-id-label-wrapper {
+  padding: 10px;
+  position: absolute;
+ 
+  top: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-id-label-text {
+  text-align: right;
+  color: black;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.back-id-upload-box {
+  width: 526px;
+  height: 64px;
+  position: absolute;
+  left: 0;
+  top: 44px;
+  background: white;
+  border-radius: 16px;
+  outline: 0.7px solid black;
+}
+
+.back-id-placeholder-wrapper {
+ padding: 10px;
+  position: absolute;
+  left: 90px;
+  top: 52px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-id-placeholder-text {
+ text-align: left;
+  color: #999999;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+.smartcard-front-upload-section {
+  width: 529px;
+  height: 108px;
+  top: -130px;
+  position: relative;
+}
+
+.smartcard-front-label-wrapper {
+  padding: 10px;
+  position: absolute;
+  /* غيّر القيمة هنا لتحريكه */
+  left: 70px; /* قللها لتحريكه لليمين، زودها لتحريكه لليسار */
+  top: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.smartcard-front-label-text {
+  text-align: right;
+  color: black;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.smartcard-front-upload-box {
+  width: 500px;
+  height: 64px;
+  position: absolute;
+  right: 100px;
+  top: 44px;
+  background: white;
+  border-radius: 16px;
+  outline: 0.7px solid black;
+  overflow: hidden; /* لمنع خروج النص */
+}
+
+.smartcard-front-placeholder-wrapper {
+  width: 500px; /* نفس عرض البوكس */
+  height: 64px; /* نفس ارتفاع المستطيل الأبيض */
+  position: absolute;
+  top: 44px; /* نفس top حق البوكس */
+  right: 100px; /* نفس موقع البوكس */
+  display: flex;
+  justify-content: center; /* وسط أفقي */
+  align-items: center;     /* وسط رأسي */
+  pointer-events: none;
+  padding: 0 15px; /* مسافة داخلية للنص */
+  box-sizing: border-box;
+}
+
+.smartcard-front-placeholder-text {
+  color: #999999;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  width: 100%;
+}
+.smartcard-back-upload-section {
+  width: 533px;
+  right: 710px;
+  top: -275px;
+  height: 108px;
+  margin-top: 40px; /* للتباعد من اللي فوق */
+  position: relative;
+}
+
+.smartcard-back-label-wrapper {
+  padding: 10px;
+  position: absolute;
+  left: 159px;
+  top: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.smartcard-back-label-text {
+  text-align: right;
+  color: black;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.smartcard-back-upload-box {
+  width: 526px;
+  height: 64px;
+  position: absolute;
+  left: 0;
+  top: 44px;
+  background: white;
+  border-radius: 16px;
+  outline: 0.7px solid black;
+}
+
+.smartcard-back-placeholder-wrapper {
+  padding: 10px;
+  position: absolute;
+  left: 90px;
+  top: 52px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.smartcard-back-placeholder-text {
+  color: #999999;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  width: 100%;
+}
+.pickup-method-select {
+  background-color: white;
+  color: #999999;
+  font-size: 25px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  padding: 0 16px;
+  direction: rtl;
+  cursor: pointer;
+  top: 880px;
+  left: 730px;
+}
+
+.next-button {
+  right: 950px;
+  top: -200px;
+  width: 190px;
+  height: 50px;
+  position: relative;
+  background: #162087;
+  overflow: hidden;
+  border-radius: 63px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.next-button:hover {
+  background: #1f2aa3; /* لون أفتح عند التحويم */
+}
+
+.next-button-content {
+  padding: 10px;
+  position: absolute;
+  left: 43px;
+  top: -1px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.next-button-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  transform: rotate(180deg);
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+.next-button-icon-shape {
+  width: 9.97px;
+  height: 16.06px;
+  position: absolute;
+  left: 10.71px;
+  top: 8.06px;
+  background: white;
+}
+
+.next-button-text {
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}

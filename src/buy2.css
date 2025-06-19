@@ -1,0 +1,474 @@
+.payment-card-details {
+  width: 210px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 16px;
+  right: 5px;
+}
+
+.payment-card-details__header {
+  width: 219px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  right: 5px;
+}
+
+.payment-card-details__title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  right: 5px;
+}
+
+.payment-card-details__title {
+  width: 219px;
+  text-align: right;
+  color: #162087;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  margin-right: 20px; /* ← هذا يحرك العنوان إلى اليمين قليلاً */
+}
+
+
+.payment-card-details__empty-text {
+  text-align: right;
+  color: #9B9B9B;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  right: 5px;
+}
+
+.payment-card-details__divider {
+  align-self: stretch;
+  height: 0;
+  outline: 1.5px solid #162087;
+  outline-offset: -0.75px;
+  right: 5px;
+}
+.card-inputs-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 150px; /* زودت المسافة بين الحقول */
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+
+.card-holder-input,
+.card-number-input {
+  width: 380px;
+  height: 90px;
+  position: relative;
+  margin: 0;
+}
+
+.card-holder-input__label-wrapper {
+ padding: 10px;
+  position: absolute;
+  top: -8px; /* رفع العنوان قليلاً */
+  left: auto;   /* بدلًا من left، نستخدم right لضبط الاتجاه */
+  right: -20px;  /* اعطي مسافة من اليمين لاظهار النص كامل */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap; /* لمنع انكسار النص */
+  overflow: visible;   /* منع قص النص */
+  max-width: 200px;    /* حجم مناسب للعناوين */
+  text-overflow: clip;
+}
+
+.card-holder-input__label {
+  text-align: right;
+  color: black;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.card-holder-input__input {
+  width: 380px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 35px;
+  background: white;
+  border-radius: 16px;
+  outline: none;
+  border: 0.7px solid black;
+  padding: 12px;
+  font-size: 18px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  color: #000;
+  direction: rtl;
+}
+
+.card-holder-input__input::placeholder {
+  color: #999999;
+}
+
+.card-number-input__label-wrapper {
+  padding: 10px;
+  position: absolute;
+  top: -8px; /* رفع العنوان قليلاً */
+  left: auto;   /* بدلًا من left، نستخدم right لضبط الاتجاه */
+  right: -20px;  /* اعطي مسافة من اليمين لاظهار النص كامل */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap; /* لمنع انكسار النص */
+  overflow: visible;   /* منع قص النص */
+  max-width: 200px;    /* حجم مناسب للعناوين */
+  text-overflow: clip;
+}
+
+.card-number-input__label {
+  text-align: right;
+  color: black;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.card-number-input__input {
+  width: 380px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  top: 35px;
+  background: white;
+  border-radius: 16px;
+  outline: none;
+  border: 0.7px solid black;
+  padding: 12px;
+  font-size: 18px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 400;
+  color: #000;
+  direction: rtl;
+}
+
+.card-number-input__input::placeholder {
+  color: #999999;
+}
+.expiration-date-wrapper {
+  width: 410px;
+  
+  margin: 20px 185px 20px auto;
+  font-family: 'Tajawal', sans-serif;
+  text-align: right;
+  direction: rtl;
+}
+
+.expiration-date-label {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+
+.expiration-select {
+    width: 100%;
+  padding: 20px; /* أكبر علشان يكبر البوكس من الداخل */
+  font-size: 22px; /* تكبير الخط داخل البوكس */
+  border-radius: 10px;
+  border: 1px solid #999;
+  cursor: pointer;
+  direction: rtl;
+}
+.expiration-year-container {
+ width: 410px;
+  position: relative !important;
+  top: -140px !important;
+  margin: 20px 710px 20px auto;
+  font-family: 'Tajawal', sans-serif;
+  text-align: right;
+  direction: rtl;
+}
+
+.expiration-year-label {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.expiration-year-select {
+  width: 100%;
+  padding: 20px; /* أكبر علشان يكبر البوكس من الداخل */
+  font-size: 22px; /* تكبير الخط داخل البوكس */
+  border-radius: 10px;
+  border: 1px solid #999;
+  cursor: pointer;
+  direction: rtl;
+}
+.password-field-container {
+  width: 415px;
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  margin: -150px 180px 10px 0; /* رفع لفوق بـ 20 بكسل وتقليل المسافة بعده */
+  margin-left: auto; /* لو عايز تحرك العنصر يمين */
+}
+
+
+.password-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+  text-align: right;
+}
+
+
+
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 0.7px solid black;
+  border-radius: 16px;
+  height: 64px;
+  padding: 0 15px;
+}
+
+.password-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #333;
+  font-weight: 400;
+  text-align: right;
+  background: transparent;
+  direction: rtl;
+}
+
+.password-input::placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.toggle-password-visibility {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 10px;
+  user-select: none;
+}
+.clickable-box {
+  width: 122px;
+  height: 89px;
+  position: absolute;
+  top: 440px;   /* بدل -100px */
+  left: 500px;  /* بدل -750px */
+  background-color: white;
+  border-radius: 16px;
+  border: 2.65px solid #d9d9d9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+.clickable-box-content {
+width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.clickable-box-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  pointer-events: none; /* عشان الصورة ما تمنع الضغط */
+  border-radius: 16px;/* عشان الصورة ما تمنع الضغط على الزر */
+}
+.btn-box {
+  width: 122px;
+  height: 89px;
+  position: absolute;
+  top: 440px;   /* بدل -100px */
+  left: 340px;  /* غير حسب حاجتك */
+  background-color: white;
+  border-radius: 16px;
+  border: 2.65px solid #d9d9d9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;/* لو حابب تلغي الحدود ممكن تحذف هذا السطر */
+}
+.btn-box-content {
+width: 100%;
+  height: 100%;
+  position: relative;
+}
+.btn-box-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.btn-box-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 16px;
+}
+.payment-button {
+  width: 122px;
+  height: 89px;
+  position: absolute;
+ top: 440px;   /* بدل -100px */
+  left: 180px;  /* بدل -750px */
+  background-color: white;
+  border-radius: 16px;
+  border: 2.65px solid #d9d9d9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.payment-button-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.payment-button-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  border-radius: 16px;
+}
+.nav-btn {
+  width: 190px;
+  height: 50px;
+  margin: 20px 160px 40px auto;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 64px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: 'Tajawal', sans-serif;
+  padding: 0;
+}
+
+.nav-btn-content {
+  position: absolute;
+  top: -1px;
+  left: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+}
+
+.nav-btn-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #181616;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow-icon {
+  font-size: 20px;
+  color: #181616;
+}
+.btn-confirm {
+  width: 364px;
+  height: 72px;
+  margin: 20px 500px 20px auto;
+  background-color: #162087;
+  border: none;
+  border-radius: 64px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.btn-confirm-content {
+  position: absolute;
+  top: 8px;
+  left: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-confirm-icon {
+  font-size: 28px;
+  color: white;
+}
+
+.btn-confirm-text {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: right;
+}
+.btn-cancel {
+  width: 190px;
+  height: 50px;
+  margin: 20px 580px 20px auto;
+  position: relative;
+  background: #F5F5F5;
+  border-radius: 64px;
+  overflow: hidden;
+  outline: 0.5px solid black;
+  border: none;
+  cursor: pointer;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.btn-cancel-content {
+  position: absolute;
+  top: 3px;
+  left: 64px;
+  padding: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-cancel-text {
+  text-align: right;
+  color: #181616;
+  font-size: 20px;
+  font-weight: 500;
+  word-wrap: break-word;
+}

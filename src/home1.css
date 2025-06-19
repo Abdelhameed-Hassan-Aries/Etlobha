@@ -1,0 +1,67 @@
+.login-dropdown {
+  width: 217px;
+  height: 162px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.login-dropdown-title {
+  position: absolute;
+  left: 85px;
+  top: 16px;
+  text-align: center;
+  color: #202D72;
+  font-size: 15px;
+  font-family: Tajawal, sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.login-dropdown-item {
+  width: 217px;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  background: white;
+  overflow: hidden;
+  border-top: 1px solid #EBEBEB;
+}
+
+.login-dropdown-item-text {
+  position: absolute;
+  top: 11px;
+  text-align: right;
+  color: #7598AF;
+  font-size: 15px;
+  font-family: Tajawal, sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.login-dropdown-item-1 {
+  top: 42px;
+}
+
+.login-dropdown-item-2 {
+  top: 82px;
+}
+
+.login-dropdown-item-3 {
+  top: 122px;
+}
+
+.login-dropdown-item-text-1 {
+  left: 148px;
+}
+
+.login-dropdown-item-text-2 {
+  left: 152px;
+}
+
+.login-dropdown-item-text-3 {
+  left: 114px;
+}

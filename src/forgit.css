@@ -1,0 +1,199 @@
+.zafrin-container {
+  width: 1280px;
+  height: 762px;
+  position: relative;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.qubli-bg {
+  width: 1280px;
+  height: 762px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: white;
+  border-radius: 24px;
+}
+
+.xalor-header {
+  width: 210px;
+  position: absolute;
+  left: 1031px;
+  top: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.proni-row {
+  width: 219px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.felni-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 219px;
+  text-align: right;
+  color: #162087;
+  font-size: 20px;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.dobra-spacer {
+  text-align: right;
+  color: #9B9B9B;
+  font-size: 20px;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.hemdi-divider {
+  align-self: stretch;
+  height: 0;
+  outline: 1.5px solid #162087;
+  outline-offset: -0.75px;
+}
+
+.girno-form-bg {
+  width: 1148px;
+  height: 619px;
+  position: absolute;
+  left: 66px;
+  top: 89px;
+  background: white;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+  border-radius: 24px;
+  outline: 1px solid #999999;
+}
+
+.bafil-label {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+}
+
+.current-pass-label {
+  left: 735px;
+  top: 112px;
+}
+
+.new-pass-label {
+  left: 734px;
+  top: 252px;
+}
+
+.confirm-pass-label {
+  left: 687px;
+  top: 392px;
+}
+
+.narmi-input {
+  width: 526px;
+  height: 64px;
+  position: absolute;
+  background: white;
+  border-radius: 16px;
+  outline: 0.7px solid black;
+}
+
+.current-pass-input {
+  left: 377px;
+  top: 156px;
+  font-size: 25px;
+}
+
+.new-pass-input {
+  left: 377px;
+  top: 296px;
+  font-size: 25px;
+}
+
+.confirm-pass-input {
+  left: 377px;
+  top: 436px;
+  font-size: 25px;
+}
+
+.lomri-placeholder {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #999999;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.current-pass-placeholder {
+  left: 755px;
+  top: 166px;
+}
+
+.new-pass-placeholder {
+  left: 690px;
+  top: 306px;
+}
+
+.confirm-pass-placeholder {
+  left: 690px;
+  top: 446px;
+}
+
+.kavro-btn {
+  border-radius: 64px;
+  overflow: hidden;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-btn {
+  width: 364px;
+  height: 72px;
+  left: 465px;
+  top: 548px;
+  background-color: #162087;
+}
+
+.cancel-btn {
+  width: 190px;
+  height: 50px;
+  left: 550px;
+  top: 655px;
+  background-color: #D9D9D9;
+}
+
+.kavro-text {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+
+.cancel-text {
+  color: black;
+}
+
+.palar-forgot-text {
+  position: absolute;
+  left: 378px;
+  top: 230px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #999999;
+}

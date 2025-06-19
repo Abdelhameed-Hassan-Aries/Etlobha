@@ -1,0 +1,170 @@
+.car-container {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.car-image {
+  width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-details {
+  flex: 1;
+}
+
+.car-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.car-price {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.car-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.spec-badge {
+  background-color: #f2f2f2;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.car-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+.car-details-container {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  background: #c4c4c4;
+  overflow: visible;
+  border-radius: 16px;
+}
+.car-details-container {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  background: #c4c4c4;
+  overflow: visible;
+  border-radius: 16px;
+}
+
+.car-details-image {
+  width: 40px;
+  height: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.car-details-button {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 72px;
+  top: 352px;
+  background: #d9d9d9;
+  transform: rotate(180deg);
+  transform-origin: top left;
+}
+
+.thumb-image {
+  width: 222px;
+  height: 152px;
+  position: absolute;
+  border-radius: 16px;
+}
+
+.thumb1 {
+  left: 100px;
+  top: 32px;
+}
+
+.thumb2 {
+  left: 100px;
+  top: 200px;
+}
+
+.thumb3 {
+  left: 100px;
+  top: 368px;
+}
+
+.thumb4 {
+  left: 100px;
+  top: 536px;
+}
+
+.thumb5 {
+  left: 100px;
+  top: 704px;
+}
+
+.car-title-text {
+  padding: 10px;
+  position: absolute;
+  left: 1118px;
+  top: 701px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  text-align: right;
+  color: black;
+  font-size: 24px;
+  font-family: Tajawal, sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.main-container {
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+.car-image-container {
+  width: 986px;
+  height: 656px;
+  left: 354px;
+  top: 32px;
+  position: absolute;
+  background: #c4c4c4;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.main-car-img {
+  width: 1192px;
+  height: 847px;
+  left: -164px;
+  top: -96px;
+  position: absolute;
+}
+
+.rotated-box {
+  width: 48px;
+  height: 48px;
+  left: 72px;
+  top: 352px;
+  position: absolute;
+  transform: rotate(180deg);
+  transform-origin: top left;
+  background: #d9d9d9;
+}

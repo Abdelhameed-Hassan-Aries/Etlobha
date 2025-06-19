@@ -1,0 +1,1185 @@
+.main-container-box {
+  width: 100%;
+  max-width: 1344px;
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  margin: 20px auto;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* التبويبات */
+.navigation-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* مسافة بين الأزرار والمحتوى */
+}
+
+.navigation-item-block {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-item-text {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  background-color: transparent;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation-item-text:hover {
+  color: #0d1a75;
+  background-color: rgba(22, 32, 135, 0.05);
+}
+
+.active-btn {
+  background-color: rgba(22, 32, 135, 0.1);
+  color: #162087;
+}
+
+/* محتوى التبويبات */
+.tab-content {
+  margin-top: 10px;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #f5f7ff;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 18px;
+  color: #333;
+  min-height: 150px;
+  border: 1px solid #e0e3f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+.navigation-tabs-container {
+  border-bottom: 1px solid #e0e0e0; /* خط فاصل تحت الأزرار */
+  padding-bottom: 16px;
+  margin-bottom: 24px; /* يبعد الأزرار عن المحتوى */
+}
+.filter-container {
+  width: 1070px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px; /* المسافة بين العناصر */
+  direction: rtl;
+}
+
+.filter-box {
+  width: calc(50% - 12px); /* يعوّض عن gap */
+  height: 56px;
+  border: 0.7px solid #999999;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+
+.filter-label {
+  font-weight: 500;
+}
+
+.filter-arrow {
+  width: 16px;
+  height: 16px;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.filter-select {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  color: #999;
+  outline: none;
+  direction: rtl;
+  appearance: none; /* نخفي السهم الافتراضي */
+  padding-right: 16px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23999' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 16px center;
+  background-size: 12px 8px;
+}
+.ec-container {
+  width: 523px;
+  
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; /* محاذاة المحتوى لليسار */
+  display: inline-flex;
+  padding: 10px; /* زيادة مساحة داخلية بسيطة */
+}
+
+.ec-header {
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+}
+
+.ec-title {
+  position: relative; /* أو absolute حسب الحاجة */
+  left: 0px;
+  color: black;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+
+.ec-input-wrapper {
+  align-self: stretch;
+  height: 56px;
+  position: relative; /* ضروري لتحريك البوكس */
+  background: white;
+  overflow: hidden;
+  border-radius: 8px;
+  outline: 0.7px solid #999999;
+  left: 0px;  /* تحريك 50px يمين */
+  top: 0px;   /* تحريك 20px لتحت */
+}
+
+.ec-input {
+  direction: ltr;
+  text-align: right;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #999999;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.ep-wrapper {
+  width: 523px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+  padding: 10px;
+  position: relative; /* مهم عشان right تشتغل */
+  right: 285px; /* بالسالب عشان يتحرك يمين */
+}
+
+.ep-header {
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+}
+
+.ep-title {
+  position: relative; /* ضروري لو حتستخدم left */
+  left: 280px;
+  color: black;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.ep-input-container {
+  align-self: stretch;
+  height: 56px;
+  position: relative; /* ضروري لتحريك البوكس */
+  background: white;
+  overflow: hidden;
+  border-radius: 8px;
+  outline: 0.7px solid #999999;
+  left: 280px;  /* تحريك 280px يمين */
+  top: 0px;
+}
+
+.ep-input {
+  direction: ltr;
+  text-align: right;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #999999;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.kc-wrapper {
+  width: 523px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative; /* مهم عشان right تشتغل */
+  left: 15px;
+}
+
+.kc-header {
+  padding: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.kc-title {
+  position: relative; /* ضروري لو حتستخدم left */
+  left: 320px;
+  color: black;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.kc-input-container {
+  position: relative;
+  align-self: stretch;
+  height: 56px;
+  background: white;
+  overflow: hidden;
+  border-radius: 8px;
+  outline: 0.7px solid #999999;
+}
+
+.kc-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #999999;
+  text-align: right;
+  direction: ltr;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.kc-placeholder {
+  position: absolute;
+  left: 296px;
+  top: 13px;
+  color: #999999;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  text-align: right;
+  pointer-events: none; /* يخلي النص مش قابل للتحديد أو الضغط */
+  user-select: none;
+}
+.pi-wrapper {
+  width: 550px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative; /* مهم عشان right تشتغل */
+  right: 15px;
+}
+
+.pi-header {
+  padding: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pi-title {
+  position: relative; /* ضروري لو حتستخدم left */
+  left: 460px;
+  color: black;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.pi-input-container {
+  position: relative;
+  align-self: stretch;
+  height: 56px;
+  background: white;
+  overflow: hidden;
+  border-radius: 8px;
+  outline: 0.7px solid #999999;
+}
+
+.pi-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #999999;
+  text-align: right;
+  direction: ltr;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.pi-placeholder {
+  position: absolute;
+  left: 368px;
+  top: 13px;
+  color: #999999;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  text-align: right;
+  pointer-events: none;
+  user-select: none;
+}
+.feature-tech-container {
+  width: 523px;
+  height: 216px;
+  position: relative;
+  right: 105px;
+}
+
+.feature-tech-header {
+  padding: 10px;
+  position: absolute;
+  left: 320px;
+  top: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-tech-title {
+  text-align: right;
+  color: black;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.feature-tech-background {
+  width: 523px;
+  height: 167px;
+  position: absolute;
+  left: 0;
+  top: 49px;
+  background: white;
+  border-radius: 8px;
+  outline: 0.7px solid #999999;
+}
+
+.feature-tech-input-wrapper {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 49px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.feature-tech-textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  color: #000000;
+  text-align: right;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.safety-container {
+  width: 523px;
+  height: 216px;
+  position: relative;
+  right: 120px;
+}
+
+.safety-header {
+  padding: 10px;
+  position: absolute;
+  left: 400px;
+  top: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.safety-title {
+  text-align: right;
+  color: black;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.safety-background {
+  width: 523px;
+  height: 167px;
+  position: absolute;
+  left: 0;
+  top: 49px;
+  background: white;
+  border-radius: 8px;
+  outline: 0.7px solid #999999;
+}
+
+.safety-input-wrapper {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 49px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.safety-textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  color: #000000;
+  text-align: right;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.features-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* مسافة بين العنصرين، يمكنك تعديلها حسب الحاجة */
+}
+.dimensions-container {
+  width: 523px;
+  height: 216px;
+  position: relative;
+  right: 105px;
+}
+
+.dimensions-header {
+   padding: 10px;
+  position: absolute;
+  left: 450px;
+  top: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dimensions-title {
+  text-align: right;
+  color: black;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.dimensions-background {
+   width: 523px;
+  height: 167px;
+  position: absolute;
+  left: 0;
+  top: 49px;
+  background: white;
+  border-radius: 8px;
+  outline: 0.7px solid #999999;
+}
+
+.dimensions-input-wrapper {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 49px;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.dimensions-textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  color: #000000;
+  text-align: right;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.car-images-container {
+  width: 598px;
+  height: 213px;
+  display: flex;               /* خلي الحاوية flex */
+   justify-content: flex-end; /* فراغ متساوي بينهم */
+  align-items: center;         /* في الوسط عمودياً */
+  padding: 59px 0 0 0;         /* ضيف padding فوق عشان يماثل top:59px */
+  gap: 10px;                   /* فراغ صغير بينهم */
+}
+
+.car-images-title {
+  position: absolute;          /* خلي العنوان ثابت */
+  left: 510px;
+  top: 1170px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Tajawal';
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+  text-align: right;
+}
+
+.image-box {
+  width: 110px;
+  height: 110px;
+  
+  right: 650px;
+  top: -250px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  outline: 0.7px solid #999;
+  display: flex;              /* استخدم flex مش inline-flex */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+/* حذف image-box-0 ... image-box-4 لأن مش محتاج إحداثيات ثابتة */
+
+.image-placeholder {
+  width: 48px;
+  height: 48px;
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder-icon {
+  width: 43px;
+  height: 39px;
+  position: absolute;
+  top: 4.5px;
+  left: 2.5px;
+  background: #999;
+}
+
+.car-images-note {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 169px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Tajawal';
+  font-size: 20px;
+  font-weight: 500;
+  color: #999;
+  text-align: right;
+}
+
+.image-limit-note {
+ 
+  display: flex;
+  justify-content: flex-end;  /* خلّي النص في أقصى اليمين */
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  /* direction: rtl; ← شيلها خالص أو تأكد إنها مش موجودة */
+}
+
+
+.image-limit-text {
+  text-align: right;
+  color: #999999;
+  font-size: 20px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+  margin-left: 100px;
+  margin-top: -500px; /* ده اللي هيحركه فعليًا على الشمال */
+}
+/* الحاوية الأب اللي هتوسّط فيها المستطيل */
+.container {
+  display: flex;
+  justify-content: center;  /* توسّط أفقي */
+  align-items: center;      /* توسّط عمودي لو في ارتفاع كافي */
+  padding: 20px;            /* مسافة من كل الجوانب */
+}
+
+/* المستطيل */
+.car-banner {
+  width: 364px;
+  height: 72px;
+  background: #162087;
+  border-radius: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-190px);
+   transition: background 0.3s ease;
+}
+.car-banner:hover {
+  background: #0f1660; /* لون عند المرور بالماوس */
+}
+
+/* النص */
+.car-banner-text {
+  color: white;
+  font-size: 30px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+.white-box {
+  display: none;
+}
+
+.card-container {
+  width: 1170px;
+  height: 294px;
+  position: relative;
+}
+
+.card-background {
+  width: 1170px;
+  height: 294px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #F5F5F5;
+  border-radius: 16px;
+}
+
+.card-image {
+  width: 461px;
+  height: 294px;
+  position: absolute;
+  left: 709px;
+  top: 0;
+  border-radius: 16px;
+}
+
+.card-title-wrapper {
+  padding: 10px;
+  position: absolute;
+  left: 405px;
+  top: 46px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.card-title {
+  text-align: right;
+  color: #050B20;
+  font-size: 32px;
+  font-family: Tajawal;
+  font-weight: 700;
+  line-height: 21.6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-spec {
+  padding: 10px;
+  position: absolute;
+  background: white;
+  border-radius: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-transmission { left: 565px; top: 125px; }
+.card-horsepower { left: 312px; top: 125px; }
+.card-engine { left: 433px; top: 125px; }
+.card-speed { left: 228px; top: 125px; }
+
+.spec-text {
+  text-align: right;
+  color: black;
+  font-size: 20px;
+  font-family: Tajawal;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.spec-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-box-a {
+  width: 21.51px;
+  height: 23.99px;
+  left: 1.24px;
+  top: 0.01px;
+  position: absolute;
+  background: #162087;
+}
+
+.icon-box-b {
+  width: 20.11px;
+  height: 21px;
+  left: 2.39px;
+  top: 1.5px;
+  position: absolute;
+  background: #162087;
+}
+
+.icon-box-c {
+  width: 15.15px;
+  height: 15.67px;
+  left: 1.5px;
+  top: 5.33px;
+  position: absolute;
+  background: #162087;
+}
+
+.icon-box-d {
+  width: 3.03px;
+  height: 5.08px;
+  left: 7.46px;
+  top: 14.71px;
+  position: absolute;
+  background: #162087;
+}
+
+.icon-box-e {
+  width: 24px;
+  height: 24px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: #162087;
+}
+
+.icon-box-f {
+  width: 22px;
+  height: 16px;
+  left: 1px;
+  top: 4px;
+  position: absolute;
+  background: #162087;
+}
+
+.card-price {
+  padding: 10px;
+  position: absolute;
+  left: 161px;
+  top: 220px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-text {
+  text-align: right;
+  color: #162087;
+  font-size: 24px;
+  font-family: 'DM Sans';
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.card-origin {
+  padding: 10px;
+  position: absolute;
+  left: 503px;
+  top: 187px;
+  background: white;
+  border-radius: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.origin-text {
+  text-align: right;
+  color: black;
+  font-size: 20px;
+  font-family: Tajawal;
+  font-weight: 500;
+}
+
+.card-avatar {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 22px;
+  top: 21px;
+}
+
+.avatar-background {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  background: white;
+  border-radius: 9999px;
+}
+
+.avatar-icon {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  overflow: hidden;
+}
+
+.icon-avatar {
+  width: 32px;
+  height: 36px;
+  left: 8px;
+  top: 6px;
+  position: absolute;
+  background: #FF8B7B;
+}
+
+.card-button {
+  width: 117px;
+  height: 48px;
+  padding: 8px 48px;
+  position: absolute;
+  left: 33px;
+  top: 221px;
+  background: #162087;
+  border-radius: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-icon {
+  width: 24px;
+  height: 24px;
+  background: #D9D9D9;
+}
+
+.btn-dot {
+  width: 13px;
+  height: 13px;
+  background: white;
+}
+
+.btn-text {
+  text-align: right;
+  color: white;
+  font-size: 20px;
+  font-family: Tajawal;
+  font-weight: 500;
+}
+
+.vehicle-wrapper {
+  width: 1170px;
+  height: 294px;
+  position: relative;
+     margin-top: 40px;     /* ⇦ فاصل من الأعلى */
+  margin-bottom: 40px;
+}
+
+.vehicle-bg {
+  width: 1170px;
+  height: 294px;
+  background: #f5f5f5;
+  position: absolute;
+  border-radius: 16px;
+}
+
+.vehicle-img {
+  width: 461px;
+  height: 294px;
+  position: absolute;
+  left: 709px;
+  border-radius: 16px;
+}
+
+.vehicle-title-box {
+  position: absolute;
+  left: 405px;
+  top: 46px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vehicle-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #050b20;
+  font-family: Tajawal;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  line-height: 21.6px;
+}
+
+.info-box {
+  position: absolute;
+  padding: 10px;
+  background: white;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-transmission { left: 565px; top: 125px; }
+.info-power        { left: 312px; top: 125px; }
+.info-speed        { left: 228px; top: 125px; }
+.info-engine       { left: 433px; top: 125px; }
+
+.info-text {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Tajawal;
+  color: black;
+  text-align: right;
+}
+
+.info-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shape-transmission {
+  width: 21.51px;
+  height: 23.99px;
+  background: #162087;
+  position: absolute;
+  left: 1.24px;
+  top: 0.01px;
+}
+
+.shape-power1 {
+  width: 20.11px;
+  height: 21px;
+  background: #162087;
+  position: absolute;
+  left: 2.39px;
+  top: 1.5px;
+}
+
+.shape-power2 {
+  width: 15.15px;
+  height: 15.67px;
+  background: #162087;
+  position: absolute;
+  left: 1.5px;
+  top: 5.33px;
+}
+
+.shape-speed1 {
+  width: 3.03px;
+  height: 5.08px;
+  background: #162087;
+  position: absolute;
+  left: 7.46px;
+  top: 14.71px;
+}
+
+.shape-speed2 {
+  width: 24px;
+  height: 24px;
+  background: #162087;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.shape-engine {
+  width: 22px;
+  height: 16px;
+  background: #162087;
+  position: absolute;
+  left: 1px;
+  top: 4px;
+}
+
+.price-section {
+  position: absolute;
+  left: 161px;
+  top: 220px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #162087;
+  font-family: 'DM Sans';
+  text-align: right;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.import-box {
+  position: absolute;
+  left: 503px;
+  top: 187px;
+  padding: 10px;
+  background: white;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.import-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  font-family: Tajawal;
+  text-align: right;
+}
+
+.avatar-box {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 22px;
+  top: 21px;
+}
+
+.avatar-circle {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 9999px;
+  position: absolute;
+}
+
+.avatar-inner {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  overflow: hidden;
+}
+
+.avatar-icon {
+  width: 32px;
+  height: 36px;
+  background: #ff8b7b;
+  position: absolute;
+  left: 8px;
+  top: 6px;
+}
+
+.details-btn {
+  position: absolute;
+  left: 33px;
+  top: 221px;
+  width: 117px;
+  height: 48px;
+  padding: 8px 48px;
+  background: #162087;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-shape {
+  width: 24px;
+  height: 24px;
+  background: #d9d9d9;
+}
+
+.btn-dot {
+  width: 13px;
+  height: 13px;
+  background: white;
+}
+
+.btn-label {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  font-family: Tajawal;
+  text-align: right;
+}
+
