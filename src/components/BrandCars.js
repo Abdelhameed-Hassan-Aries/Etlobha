@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { brandsAPI } from "../services/clientAPI";
+import { brandsAPI, ordersAPI } from "../services/clientAPI";
+import { useAppContext } from "../contexts/AppContext";
 import Header from "./Header";
 import "./BrandCars.css";
 
 const BrandCars = () => {
   const { brandId } = useParams();
   const navigate = useNavigate();
+  const { isLoggedIn } = useAppContext();
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [brandName, setBrandName] = useState("");
+  const [orderLoading, setOrderLoading] = useState({});
 
   useEffect(() => {
     fetchBrandCars();
@@ -42,9 +45,33 @@ const BrandCars = () => {
     navigate(`/car/${carId}`);
   };
 
-  const handleBuyClick = (e, carId) => {
+  const handleBuyClick = async (e, carId) => {
     e.stopPropagation();
-    navigate(`/buy/${carId}`);
+
+    // Check if user is logged in
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
+
+    try {
+      setOrderLoading((prev) => ({ ...prev, [carId]: true }));
+
+      const response = await ordersAPI.createOrder({
+        carId: carId,
+        paymentMethod: "credit_card",
+      });
+
+      if (response.success) {
+        alert("تم إضافة السيارة إلى طلباتك بنجاح!");
+        navigate("/orders");
+      }
+    } catch (error) {
+      console.error("Error creating order:", error);
+      alert(error.message || "حدث خطأ أثناء إنشاء الطلب");
+    } finally {
+      setOrderLoading((prev) => ({ ...prev, [carId]: false }));
+    }
   };
 
   const formatPrice = (price) => {
@@ -150,9 +177,13 @@ const BrandCars = () => {
                     !car.isAvailable ? "disabled" : ""
                   }`}
                   onClick={(e) => handleBuyClick(e, car.id)}
-                  disabled={!car.isAvailable}
+                  disabled={!car.isAvailable || orderLoading[car.id]}
                 >
-                  {!car.isAvailable ? "مباع" : "شراء الآن"}
+                  {orderLoading[car.id]
+                    ? "جاري المعالجة..."
+                    : !car.isAvailable
+                    ? "مباع"
+                    : "شراء الآن"}
                 </button>
               </div>
             </div>

@@ -2,20 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { homeAPI, brandsAPI } from "./services/clientAPI";
 import { useAppContext } from "./contexts/AppContext";
+import { getAllCars } from "./data/carsData";
 import "./Home.css";
 import "./styles/global.css";
 
 // Import images
 import carIcon from "./image/1.png";
 import searchIcon from "./image/2.png";
-import car1Img from "./image/car1.png";
-import car2Img from "./image/car2.png";
-import car3Img from "./image/car3.png";
-import car4Img from "./image/car4.png";
-import car5Img from "./image/car5.png";
-import car6Img from "./image/car6.png";
-import car7Img from "./image/car7.png";
-import car8Img from "./image/car8.png";
 import selectAllIcon from "./image/select-all-svgrepo-com.svg";
 
 function UsedCars() {
@@ -24,6 +17,7 @@ function UsedCars() {
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [brands, setBrands] = useState([]);
+  const [usedCars, setUsedCars] = useState([]);
 
   // Use shared context for language, theme, and authentication
   const {
@@ -42,7 +36,12 @@ function UsedCars() {
 
   useEffect(() => {
     fetchBrands();
+    fetchUsedCars();
   }, []);
+
+  useEffect(() => {
+    fetchUsedCars();
+  }, [isEnglish]);
 
   const fetchBrands = async () => {
     try {
@@ -52,6 +51,30 @@ function UsedCars() {
       }
     } catch (error) {
       console.error("Error fetching brands:", error);
+    }
+  };
+
+  const fetchUsedCars = () => {
+    try {
+      // Get cars with older years (below 2022) for the used cars section
+      const allCars = getAllCars();
+      const filteredUsedCars = allCars
+        .filter((car) => car.year < 2022)
+        .slice(0, 8)
+        .map((car) => ({
+          id: car.id,
+          name: isEnglish ? car.name : car.nameAr,
+          price: `$${car.price.toLocaleString()}`,
+          image: car.images[0],
+          year: car.year.toString(),
+          mileage: isEnglish
+            ? `${car.mileage.toLocaleString()} km`
+            : `${car.mileage.toLocaleString()} كم`,
+          condition: isEnglish ? car.condition : car.conditionAr,
+        }));
+      setUsedCars(filteredUsedCars);
+    } catch (error) {
+      console.error("Error loading used cars:", error);
     }
   };
 
@@ -78,81 +101,7 @@ function UsedCars() {
     }
   };
 
-  // Used cars data
-  const usedCars = [
-    {
-      id: 1,
-      name: isEnglish ? "Ford Transit 2021" : "فورد ترانزيت 2021",
-      price: "$22,000",
-      image: car1Img,
-      year: "2021",
-      mileage: isEnglish ? "45,000 km" : "45,000 كم",
-      condition: isEnglish ? "Excellent" : "ممتاز",
-    },
-    {
-      id: 2,
-      name: isEnglish ? "Toyota Camry 2022" : "تويوتا كامري 2022",
-      price: "$19,500",
-      image: car2Img,
-      year: "2022",
-      mileage: isEnglish ? "25,000 km" : "25,000 كم",
-      condition: isEnglish ? "Excellent" : "ممتاز",
-    },
-    {
-      id: 3,
-      name: isEnglish ? "Hyundai Elantra 2021" : "هيونداي النترا 2021",
-      price: "$17,800",
-      image: car3Img,
-      year: "2021",
-      mileage: isEnglish ? "38,000 km" : "38,000 كم",
-      condition: isEnglish ? "Very Good" : "جيد جداً",
-    },
-    {
-      id: 4,
-      name: isEnglish ? "Toyota Camry 2020" : "تويوتا كامري 2020",
-      price: "$18,500",
-      image: car4Img,
-      year: "2020",
-      mileage: isEnglish ? "52,000 km" : "52,000 كم",
-      condition: isEnglish ? "Good" : "جيد",
-    },
-    {
-      id: 5,
-      name: isEnglish ? "Hyundai Elantra 2021" : "هيونداي إلنترا 2021",
-      price: "$17,200",
-      image: car5Img,
-      year: "2021",
-      mileage: isEnglish ? "41,000 km" : "41,000 كم",
-      condition: isEnglish ? "Very Good" : "جيد جداً",
-    },
-    {
-      id: 6,
-      name: isEnglish ? "BMW X5 2019" : "بي إم دبليو إكس 5 2019",
-      price: "$45,000",
-      image: car6Img,
-      year: "2019",
-      mileage: isEnglish ? "65,000 km" : "65,000 كم",
-      condition: isEnglish ? "Excellent" : "ممتاز",
-    },
-    {
-      id: 7,
-      name: isEnglish ? "Mercedes C200 2020" : "مرسيدس سي 200 2020",
-      price: "$38,000",
-      image: car7Img,
-      year: "2020",
-      mileage: isEnglish ? "48,000 km" : "48,000 كم",
-      condition: isEnglish ? "Excellent" : "ممتاز",
-    },
-    {
-      id: 8,
-      name: isEnglish ? "Audi A4 2019" : "أودي إيه 4 2019",
-      price: "$32,000",
-      image: car8Img,
-      year: "2019",
-      mileage: isEnglish ? "58,000 km" : "58,000 كم",
-      condition: isEnglish ? "Good" : "جيد",
-    },
-  ];
+  // Used cars are now loaded from carsData.js
 
   const handleCarClick = (carId) => {
     navigate(`/car/${carId}`);

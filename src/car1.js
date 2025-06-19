@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAppContext } from "./contexts/AppContext";
+import { ordersAPI } from "./services/clientAPI";
 import "./car1.css";
 import carIcon from "./image/1.png";
 import searchIcon from "./image/2.png";
@@ -14,6 +16,8 @@ function Home() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isEnglish, setIsEnglish] = useState(false);
+  const { isLoggedIn } = useAppContext();
+  const [orderLoading, setOrderLoading] = useState(false);
 
   const [filters, setFilters] = useState({
     model: "",
@@ -69,6 +73,34 @@ function Home() {
 
   const toggleLanguage = () => {
     setIsEnglish(!isEnglish);
+  };
+
+  const handleBuyClick = async () => {
+    // Check if user is logged in
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
+
+    try {
+      setOrderLoading(true);
+
+      // Create order for the car (assuming this is for car ID 1 based on the component name)
+      const response = await ordersAPI.createOrder({
+        carId: 1, // You might want to make this dynamic based on the actual car
+        paymentMethod: "credit_card",
+      });
+
+      if (response.success) {
+        alert("تم إضافة السيارة إلى طلباتك بنجاح!");
+        navigate("/orders");
+      }
+    } catch (error) {
+      console.error("Error creating order:", error);
+      alert(error.message || "حدث خطأ أثناء إنشاء الطلب");
+    } finally {
+      setOrderLoading(false);
+    }
   };
 
   return (
@@ -750,12 +782,12 @@ function Home() {
             borderRadius: 63,
             cursor: "pointer",
           }}
-          onClick={() => navigate("/buy")}
+          onClick={handleBuyClick}
           role="button"
           tabIndex={0}
           onKeyPress={(e) => {
             if (e.key === "Enter" || e.key === " ") {
-              navigate("/buy");
+              handleBuyClick();
             }
           }}
         >
@@ -783,7 +815,7 @@ function Home() {
                 wordWrap: "break-word",
               }}
             >
-              اشتري الان
+              {orderLoading ? "جاري المعالجة..." : "اشتري الان"}
             </div>
           </div>
           <div

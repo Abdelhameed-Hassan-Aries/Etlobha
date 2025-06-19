@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { carsAPI, ordersAPI } from "../services/clientAPI";
 import { getBrandById } from "../data/carsData";
+import { useAppContext } from "../contexts/AppContext";
 import Header from "./Header";
 import "./CarDetails.css";
 
 const CarDetails = () => {
   const { carId } = useParams();
   const navigate = useNavigate();
+  const { isLoggedIn } = useAppContext();
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -41,10 +43,7 @@ const CarDetails = () => {
       setOrderLoading(true);
 
       // Check if user is logged in
-      const currentUser = JSON.parse(
-        localStorage.getItem("otlobha_current_user") || "null"
-      );
-      if (!currentUser) {
+      if (!isLoggedIn) {
         navigate("/login");
         return;
       }

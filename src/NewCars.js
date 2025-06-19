@@ -1,17 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "./contexts/AppContext";
+import { getAllCars } from "./data/carsData";
 import "./Home.css";
-
-// Import car images
-import car1Img from "./image/car1.png";
-import car2Img from "./image/car2.png";
-import car3Img from "./image/car3.png";
-import car4Img from "./image/car4.png";
-import car5Img from "./image/car5.png";
-import car6Img from "./image/car6.png";
-import car7Img from "./image/car7.png";
-import car8Img from "./image/car8.png";
 
 // Import other images
 import carIcon from "./image/1.png";
@@ -21,6 +12,7 @@ function NewCars() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [newCars, setNewCars] = useState([]);
 
   // Use shared context for language, theme, and authentication
   const {
@@ -59,81 +51,37 @@ function NewCars() {
     }
   };
 
-  // New cars data - same cars but with new car info
-  const newCars = [
-    {
-      id: 1,
-      name: isEnglish ? "Ford Transit 2024" : "فورد ترانزيت 2024",
-      price: "$32,000",
-      image: car1Img,
-      year: "2024",
-      mileage: isEnglish ? "0 km" : "0 كم",
-      condition: isEnglish ? "New" : "جديد",
-    },
-    {
-      id: 2,
-      name: isEnglish ? "Toyota Camry 2024" : "تويوتا كامري 2024",
-      price: "$28,500",
-      image: car2Img,
-      year: "2024",
-      mileage: isEnglish ? "0 km" : "0 كم",
-      condition: isEnglish ? "New" : "جديد",
-    },
-    {
-      id: 3,
-      name: isEnglish ? "Hyundai Elantra 2024" : "هيونداي النترا 2024",
-      price: "$25,800",
-      image: car3Img,
-      year: "2024",
-      mileage: isEnglish ? "0 km" : "0 كم",
-      condition: isEnglish ? "New" : "جديد",
-    },
-    {
-      id: 4,
-      name: isEnglish ? "Toyota Corolla 2024" : "تويوتا كورولا 2024",
-      price: "$24,500",
-      image: car4Img,
-      year: "2024",
-      mileage: isEnglish ? "0 km" : "0 كم",
-      condition: isEnglish ? "New" : "جديد",
-    },
-    {
-      id: 5,
-      name: isEnglish ? "Hyundai Elantra 2024" : "هيونداي إلنترا 2024",
-      price: "$26,800",
-      image: car5Img,
-      year: "2024",
-      mileage: isEnglish ? "0 km" : "0 كم",
-      condition: isEnglish ? "New" : "جديد",
-    },
-    {
-      id: 6,
-      name: isEnglish ? "BMW X5 2024" : "بي إم دبليو إكس 5 2024",
-      price: "$75,000",
-      image: car6Img,
-      year: "2024",
-      mileage: isEnglish ? "0 km" : "0 كم",
-      condition: isEnglish ? "New" : "جديد",
-    },
-    {
-      id: 7,
-      name: isEnglish ? "Mercedes C200 2024" : "مرسيدس سي 200 2024",
-      price: "$55,000",
-      image: car7Img,
-      year: "2024",
-      mileage: isEnglish ? "0 km" : "0 كم",
-      condition: isEnglish ? "New" : "جديد",
-    },
-    {
-      id: 8,
-      name: isEnglish ? "Audi A4 2024" : "أودي إيه 4 2024",
-      price: "$48,000",
-      image: car8Img,
-      year: "2024",
-      mileage: isEnglish ? "0 km" : "0 كم",
-      condition: isEnglish ? "New" : "جديد",
-    },
-  ];
+  useEffect(() => {
+    fetchNewCars();
+  }, []);
+
+  useEffect(() => {
+    fetchNewCars();
+  }, [isEnglish]);
+
+  const fetchNewCars = () => {
+    try {
+      // Get cars with newer years (2022 and above) for the new cars section
+      const allCars = getAllCars();
+      const filteredNewCars = allCars
+        .filter((car) => car.year >= 2022)
+        .slice(0, 8)
+        .map((car) => ({
+          id: car.id,
+          name: isEnglish ? car.name : car.nameAr,
+          price: `$${car.price.toLocaleString()}`,
+          image: car.images[0],
+          year: car.year.toString(),
+          mileage: isEnglish
+            ? `${car.mileage.toLocaleString()} km`
+            : `${car.mileage.toLocaleString()} كم`,
+          condition: isEnglish ? car.condition : car.conditionAr,
+        }));
+      setNewCars(filteredNewCars);
+    } catch (error) {
+      console.error("Error loading new cars:", error);
+    }
+  };
 
   const handleCarClick = (carId) => {
     navigate(`/car/${carId}`);
